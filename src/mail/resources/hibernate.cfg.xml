@@ -13,9 +13,10 @@
    <property name="hibernate.connection.password">auf253100vbnc45</property>
    <property name="show_sql">true</property>
    <property name="hibernate.hbm2ddl.auto">create</property>
-   
+
    <mapping resource="user.cfg.xml"/>
-   
+   <mapping resource="role.cfg.xml"/>
+
    </session-factory>
 
 </hibernate-configuration>

@@ -1,17 +1,8 @@
 package shchur_pavlo.Hibernate;
 
-import java.io.Serializable;
 
-import lombok.Getter;
-import lombok.Setter;
-
-
-public class User implements Serializable {
+public class User {
 	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 856354997274633301L;
 
 	private long id;
 
@@ -19,6 +10,8 @@ public class User implements Serializable {
 
 	private String firstName;
 	private String lastName;
+	
+	private Role role;
 	
 	
 	public User() {
@@ -62,10 +55,12 @@ public class User implements Serializable {
 		this.lastName = lastName;
 	}
 
-	public static long getSerialversionuid() {
-		return serialVersionUID;
+	public Role getRole() {
+		return role;
+	}
+
+	public void setRole(Role role) {
+		this.role = role;
 	}
 	
-	
-
 }

@@ -2,7 +2,7 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-		<class name="shchur_pavlo.Hibernate.User" table="USER">
+		<class name="shchur_pavlo.Hibernate.User" table="user">
 			<id name="id" column="id">
 			<generator class="native" />
 			</id>
@@ -10,6 +10,10 @@
 			<property name="firstName" column="firstName" type="string"/>
 			<property name="lastName" column="lastName" type="string"/>
 			<property name="age" column="age" type="int"/>
+			
+			<many-to-one name="role" class="shchur_pavlo.Hibernate.Role">
+				<column name="role_id" not-null="true"></column>
+			</many-to-one>
 		</class>
 </hibernate-mapping>
  
