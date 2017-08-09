@@ -16,6 +16,7 @@
 
    <mapping resource="user.cfg.xml"/>
    <mapping resource="role.cfg.xml"/>
+   <mapping resource="company.cfg.xml"/>
 
    </session-factory>
 

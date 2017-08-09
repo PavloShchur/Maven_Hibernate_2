@@ -13,6 +13,8 @@ public class User {
 	
 	private Role role;
 	
+	private Company company;
+	
 	
 	public User() {
 		super();
@@ -62,5 +64,15 @@ public class User {
 	public void setRole(Role role) {
 		this.role = role;
 	}
+
+	public Company getCompany() {
+		return company;
+	}
+
+	public void setCompany(Company company) {
+		this.company = company;
+	}
+	
+	
 	
 }

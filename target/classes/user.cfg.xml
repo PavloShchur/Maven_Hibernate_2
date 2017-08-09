@@ -3,6 +3,7 @@
 
 <hibernate-mapping>
 		<class name="shchur_pavlo.Hibernate.User" table="user">
+			
 			<id name="id" column="id">
 			<generator class="native" />
 			</id>
@@ -14,6 +15,9 @@
 			<many-to-one name="role" class="shchur_pavlo.Hibernate.Role">
 				<column name="role_id" not-null="true"></column>
 			</many-to-one>
+			
+			<one-to-one name="company" class="shchur_pavlo.Hibernate.Company"/>			
+			
 		</class>
 </hibernate-mapping>
  
