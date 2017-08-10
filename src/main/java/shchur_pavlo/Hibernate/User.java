@@ -1,8 +1,9 @@
 package shchur_pavlo.Hibernate;
 
+import java.util.HashSet;
+import java.util.Set;
 
 public class User {
-	
 
 	private long id;
 
@@ -10,12 +11,13 @@ public class User {
 
 	private String firstName;
 	private String lastName;
-	
+
 	private Role role;
-	
+
 	private Company company;
-	
-	
+
+	private Set<Product> products = new HashSet<Product>();
+
 	public User() {
 		super();
 	}
@@ -72,7 +74,13 @@ public class User {
 	public void setCompany(Company company) {
 		this.company = company;
 	}
-	
-	
-	
+
+	public Set<Product> getProducts() {
+		return products;
+	}
+
+	public void setProducts(Set<Product> products) {
+		this.products = products;
+	}
+
 }
