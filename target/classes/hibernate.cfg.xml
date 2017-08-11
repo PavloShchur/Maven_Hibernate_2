@@ -18,6 +18,9 @@
    <mapping resource="role.cfg.xml"/>
    <mapping resource="company.cfg.xml"/>
    <mapping resource="product.cfg.xml"/>
+   
+   <mapping class="shchur_pavlo.Hibernate.Country" />
+   <mapping class="shchur_pavlo.Hibernate.Region" />
 
    </session-factory>
 
