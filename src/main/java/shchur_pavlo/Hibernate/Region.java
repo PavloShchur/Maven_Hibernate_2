@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -22,6 +24,10 @@ public class Region implements Serializable {
 	@Column(name = "nameOfRegion", length = 50)
 	private String nameOfRegion;
 
+	@ManyToOne
+	@JoinColumn(name = "city_id")
+	private City city;
+
 	public Region() {
 		super();
 	}
@@ -34,6 +40,13 @@ public class Region implements Serializable {
 	public Region(String nameOfRegion) {
 		super();
 		this.nameOfRegion = nameOfRegion;
+	}
+
+	public Region(long id, String nameOfRegion, City city) {
+		super();
+		this.id = id;
+		this.nameOfRegion = nameOfRegion;
+		this.city = city;
 	}
 
 	public long getId() {
@@ -54,6 +67,14 @@ public class Region implements Serializable {
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
+	}
+
+	public City getCity() {
+		return city;
+	}
+
+	public void setCity(City city) {
+		this.city = city;
 	}
 
 	@Override

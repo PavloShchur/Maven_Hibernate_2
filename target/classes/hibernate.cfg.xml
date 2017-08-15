@@ -21,6 +21,7 @@
    
    <mapping class="shchur_pavlo.Hibernate.Country" />
    <mapping class="shchur_pavlo.Hibernate.Region" />
+   <mapping class="shchur_pavlo.Hibernate.City" />
 
    </session-factory>
 

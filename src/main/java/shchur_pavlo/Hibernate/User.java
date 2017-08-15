@@ -3,6 +3,13 @@ package shchur_pavlo.Hibernate;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+
+
 public class User {
 
 	private long id;
@@ -17,6 +24,7 @@ public class User {
 	private Company company;
 
 	private Set<Product> products = new HashSet<Product>();
+
 
 	public User() {
 		super();
