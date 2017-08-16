@@ -10,6 +10,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 @Entity
@@ -28,6 +30,10 @@ public class City implements Serializable {
 	@OneToMany(mappedBy = "city")
 	private List<Region> regions = new ArrayList<Region>();
 
+	@OneToOne
+	@PrimaryKeyJoinColumn
+	private Council council;
+
 	public City() {
 		super();
 	}
@@ -35,6 +41,21 @@ public class City implements Serializable {
 	public City(long id) {
 		super();
 		this.id = id;
+	}
+
+	public City(long id, String nameOfCity, Council council) {
+		super();
+		this.id = id;
+		this.nameOfCity = nameOfCity;
+		this.council = council;
+	}
+
+	public City(long id, String nameOfCity, List<Region> regions, Council council) {
+		super();
+		this.id = id;
+		this.nameOfCity = nameOfCity;
+		this.regions = regions;
+		this.council = council;
 	}
 
 	public long getId() {
@@ -64,6 +85,16 @@ public class City implements Serializable {
 	public void setNameOfCity(String nameOfCity) {
 		this.nameOfCity = nameOfCity;
 	}
+
+	public Council getCouncil() {
+		return council;
+	}
+
+	public void setCouncil(Council council) {
+		this.council = council;
+	}
+	
+	
 
 	@Override
 	public String toString() {
